@@ -1,0 +1,36 @@
+<h1>Fill Your Details</h1>
+
+
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">My Page</h5>
+
+Enter Name <input type="text" [(ngModel)] = "formData.name"/><br><br>
+
+Enter Email <input type="Email"[(ngModel)] = "formData.email"/><br><br>
+
+Enter age <input type="number"[(ngModel)] = "formData.age"/><br><br>
+
+
+
+  Enter gender  <input type="text"[(ngModel)] = "formData.gender" /><br><br>
+
+<button class="btn btn-primary" (click)= setval(name)> SUBMIT</button>
+
+</div>
+<div class="card-footer text-muted">
+  2 days ago
+</div>
+</div>
+<br>
+
+
+
+
+
+
+{{formData | json}}
+
+
