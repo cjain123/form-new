@@ -1,6 +1,8 @@
 
-import { Component } from '@angular/core';
+import { FormsModule } from '@angular/Forms';
 
+import { Component } from '@angular/core';
+import { never } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +12,22 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'program1';
-name = 'chaitan';
-surname = 'jain';
-  message = '';
+ formData = {
+   name: '' ,
+   salary: '',
+   department: ''
+ }
 
+     userlist = [];
 
-   formData = {
-      name: '',
-      age: 0,
-      email: '',
-      gender:''
-   };
-
- setval(formData: any)
-  {
-   console.log(this.formData);
+     setval(array: FormData)
+{
+       console.log(this.formData);
+       this.userlist.push(this.formData);
+       this.formData = [];
+  }
+  ondelete(deleteme){
+        this.userlist.splice(deleteme, 1)
   }
 
 }
