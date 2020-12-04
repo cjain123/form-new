@@ -6,10 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/Forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoComponent } from './todo/todo.component';
+import { EmployeeComponent } from './employee/employee.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    TodoComponent,
+    EmployeeComponent,
+
 
   ],
   imports: [

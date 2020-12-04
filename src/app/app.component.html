@@ -1,48 +1,17 @@
 <div class="card text-center">
   <div class="card-header">
-    </div>
-<div class="card-body">
-    <h1 class="card-title">Employee Detail</h1>
-      <br><br>
-        Enter Employee Name <input type="text" [(ngModel)]= "formData.name"/>
-        <br><br>
-        Enter Employee Salary <input type="numbers"[(ngModel)] = "formData.salary"/>
-        <br><br>
-        Enter Department <input type="text"[(ngModel)] = "formData.department"/>
-        <br><br>
+  <div class="card-footer text-muted">
 
-<button class="btn btn-primary" (click)= setval(userlist)> SUBMIT</button>
-  </div>
-    <div class="card-footer text-muted">
-      </div>
-         </div>
-             <br>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">employer name</th>
-      <th scope="col">salary</th>
-      <th scope="col">Department</th>
-      <th scope="col">Delete</th>
+<nav>
+  <a routerLink ="/employee">employee</a>
+</nav>
+<br>
+<br>
+<nav>
+  <a routerLink="/todo">todo</a>
+</nav>
 
-    </tr>
-  </thead>
-  <tr *ngFor= "let data of userlist; index as no">
-    <td>{{no}}</td>
-    <td>{{data.name}}</td>
-    <td>{{data.salary}}</td>
-    <td>{{data.department}}</td>
-    <td>
-      <button (click)= "ondelete(no)" class="btn btn-success" >Delete</button>
-    </td>
-  </tr>
-
-
-
-
-
-
-{{formData | json}}
-
-
+<div class="card-footer text-muted">
+</div>
+</div>
+<router-outlet></router-outlet>
