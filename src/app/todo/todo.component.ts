@@ -7,13 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
  export class TodoComponent implements OnInit {
 
- name = '';
+ todoData = {
+   name : '',
+ };
 
- onEnter(name: string): void
- {
-  console.log(this.name),
-    this.name = name;
-   }
+ todoList = [];
+
+ onEnter(array: todoData): void{
+  console.log(this.todoData);
+  this.todoList.push(this.todoData),
+  this.todoData = {};
+ }
+ ondelete(deleteme: any): void  {
+  this.todoList.splice(deleteme, 1);
+}
+
 
  ngOnInit(): void {
 

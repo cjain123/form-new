@@ -14,12 +14,11 @@ export class EmployeeComponent implements OnInit {
     name: '' ,
     salary: '',
    department: ''
-     }
-
+    }
    userlist = [];
    employeeDetails(array: FormData): void {
     console.log(this.formData);
-    this.userlist.push(this.formData);
+    this.userlist.push(this.formData),
     this.formData = {};
 }
 ondelete(deleteme: any): void  {

@@ -1,4 +1,29 @@
-Name <input #box (keyup.enter)="onEnter(box.value)">
-    <p>{{name}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <input  class="col-12 col-md-8" #box (keyup.enter)="onEnter(box.value)" placeholder="event" [(ngModel)]= "todoData.name"/>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)= onEnter(todoList)>add</button>
+    </div>
+  </div>
+
+
+<table class="table table-bordered">
+  <thead>
+   <tr>
+
+     <th scope="col">ID</th>
+     <th scope="col">name</th>
+     <th scope="col">Delete</th>
+   </tr>
+  </thead>
+  <tr *ngFor= "let list of todoList; index as no">
+    <td>{{no}}</td>
+    <td>{{list.name}}</td>
+    <button (click)= "ondelete(no)" ><img src= "./assets/61848.png"height = "20px"width ="20px"></button></tr>
+
+</table>
+
 <br>
 <br>
