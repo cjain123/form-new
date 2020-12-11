@@ -1,60 +1,60 @@
 <div class="card text-center">
   <div class="card-header">
-    </div>
+  </div>
 
-    <div class="card-body">
+  <div class="card-body">
 
-      <h1 class="card-title">Employee Detail</h1>
+    <h1 class="card-title">Employee Detail</h1>
 
-      <br><br>
+    <br><br>
 
-      Enter Employee Name <input type="text" [(ngModel)]= "formData.name"/>
+    Enter Employee Name <input type="text" [(ngModel)]="formData.name" />
 
-      <br><br>
+    <br><br>
 
-      Enter Employee Salary <input type="numbers"[(ngModel)] = "formData.salary"/>
+    Enter Employee Salary <input type="numbers" [(ngModel)]="formData.salary" />
 
-      <br><br>
+    <br><br>
 
-      Enter Department <input type="text"[(ngModel)] = "formData.department"/>
+    Enter Department <input type="text" [(ngModel)]="formData.department" />
 
-      <br><br>
+    <br><br>
 
 
-      <button class="btn btn-primary" (click)= employeeDetails(userlist)> SUBMIT</button>
-
-    </div>
-
-    <div class="card-footer text-muted">
-
-    </div>
+    <button class="btn btn-primary" (click)=employeeDetails(userlist)> SUBMIT</button>
 
   </div>
 
-  <br>
+  <div class="card-footer text-muted">
 
-  <table class="table table-bordered">
-     <thead>
-      <tr>
+  </div>
 
-        <th scope="col">ID</th>
-        <th scope="col">employer name</th>
-        <th scope="col">salary</th>
-        <th scope="col">Department</th>
-        <th scope="col">Delete</th>
+</div>
 
-      </tr>
-     </thead>
-  <tr *ngFor= "let data of userlist; index as no">
+<br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+
+      <th scope="col">ID</th>
+      <th scope="col">employer name</th>
+      <th scope="col">salary</th>
+      <th scope="col">Department</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  <tr *ngFor="let data of userlist; index as no">
     <td>{{no}}</td>
     <td>{{data.name}}</td>
     <td>{{data.salary}}</td>
     <td>{{data.department}}</td>
     <td>
-      <button (click)= "ondelete(no)" ><img src = "./assets/61848.png" height = "20px"width ="20px"></button>
+      <button (click)="ondelete(no)"><i class="fa fa-trash" aria-hidden="true"></i></button>
     </td>
   </tr>
 
-{{formData | json}}
+  {{formData | json}}
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>

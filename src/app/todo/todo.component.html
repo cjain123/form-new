@@ -1,29 +1,58 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <input  class="col-12 col-md-8" #box (keyup.enter)="onEnter(box.value)" placeholder="event" [(ngModel)]= "todoData.name"/>
+      <input class="col-12 col-md-8" #box (keyup.enter)="onEnter(box.value)" placeholder="event"
+        [(ngModel)]="todoData.name" />
     </div>
     <div class="col">
-      <button class="btn btn-primary" (click)= onEnter(todoList)>add</button>
+      <button class="btn btn-primary" (click)="onEnter(todoList)">add</button>
     </div>
   </div>
 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col-md-1">ID</th>
+        <th scope="col-md-2">Name</th>
+        <th scope="col-md-3">Actions</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let element of todoList; index as i">
+      <td>{{i+1}}-{{element.isedit}}</td>
+      <td>
+        <div class="col-md" *ngIf= "!element.isedit">
+          {{ element.name   }}
+        </div>
 
-<table class="table table-bordered">
-  <thead>
-   <tr>
+        <div class="col-md" *ngIf= "element.isedit">
+          <input type="text" [(ngModel)]="element.name" />
+        </div>
+      </td>
 
-     <th scope="col">ID</th>
-     <th scope="col">name</th>
-     <th scope="col">Delete</th>
-   </tr>
-  </thead>
-  <tr *ngFor= "let list of todoList; index as no">
-    <td>{{no}}</td>
-    <td>{{list.name}}</td>
-    <button (click)= "ondelete(no)" ><img src= "./assets/61848.png"height = "20px"width ="20px"></button></tr>
+      <td>
+        <div class="name" *ngIf= "!element.isedit">
+          <button (click)= "ondelete(element)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+          <button (click)= "isedit(element)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="element" *ngIf= "element.isedit">
+          <button (click)="saveelement(element)">
+            <i class="fa fa-check-circle-o" aria-hidden="false"></i>
+          </button>
+          <button (click)="close(element)">
+            <i class="fa fa-times" aria-hidden="false"></i>
+          </button>
 
-</table>
 
-<br>
-<br>
+        </div>
+      </td>
+
+    </tr>
+  </table>
+
+  <br />
+  <br />
+</div>
